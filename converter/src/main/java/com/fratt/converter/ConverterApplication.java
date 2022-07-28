@@ -19,14 +19,17 @@ public class ConverterApplication {
 	String[] springConfig  = 
 	{	
 		"spring/batch/config/context.xml",
-		"spring/batch/jobs/job-report.xml" 
+		//"spring/batch/jobs/job-report.xml" 
+		"spring/batch/jobs/job-clinicalstudy.xml" 
 	};
 		
 	ApplicationContext context = 
 		new ClassPathXmlApplicationContext(springConfig);
 		
 	JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-	Job job = (Job) context.getBean("reportJob");
+	//Job job = (Job) context.getBean("reportJob");
+	Job job = (Job) context.getBean("clinicalSearchJob");
+	
 
 	try {
 
